@@ -6,12 +6,12 @@ def home(request):
     return render(request, 'text-analyze.html')
 
 def output(request):
-    mytext = request.GET.get('mytext', 'def')
-    punct = request.GET.get('punc', 'off')
-    upper = request.GET.get('upper', 'off')
-    nline = request.GET.get('nline', 'off')
-    space = request.GET.get('space', 'off')
-    charcnt = request.GET.get('chrcnt', 'off')
+    mytext = request.POST.get('mytext', 'def')
+    punct = request.POST.get('punc', 'off')
+    upper = request.POST.get('upper', 'off')
+    nline = request.POST.get('nline', 'off')
+    space = request.POST.get('space', 'off')
+    charcnt = request.POST.get('chrcnt', 'off')
 
     # mytext = request.GET.get('mytext', 'def')
     # choice = request.GET.get('choice', 'none')
@@ -40,7 +40,7 @@ def output(request):
     if nline == "on":
         analyzed_text = ''
         for _ in mytext:
-            if(_ != '\n'):
+            if(_ != '\n' and _ != '\r'):
                 analyzed_text += _
         mytext = analyzed_text
         pi = {'raw_data':mytext, 'analyzed_text':mytext}
