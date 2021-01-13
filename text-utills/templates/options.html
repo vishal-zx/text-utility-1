@@ -51,10 +51,21 @@
         </form>
     </nav>
     <br>
+    <div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Congratulations!</h4>
+            <hr>
+            <p>Your text is successfully analyzed !!!</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <br><br>
     <div class="container">
         <h3>Your Output is:</h3>
-        <h4>{{analyzed_text}}</h4>
-        <h4>{{cnt}}</h4>
+        <pre><h4>{{analyzed_text}}</h4></pre>
+        <pre><h4>{{cnt}}</h4></pre>
         
         <br>
         <button class="btn btn-dark"><a href='/' style="color: white;">Back</a></button>
