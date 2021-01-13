@@ -68,7 +68,7 @@
                     <br><br>
                     <h1>Welcome to Text Utility</h1>
                     <h3>Enter your text below!</h3>
-                    <form action='/output' method='get'>
+                    <form action='/output' method='POST'> {% csrf_token %}
                         <textarea name='mytext' style='margin: 0px; width: 700px; height: 470px; background-color: #e6fff9;'></textarea>
                         <br><br>
                         <div class="custom-control custom-switch">
